@@ -22,8 +22,8 @@ return new class extends Migration
             $table->foreignId('tax_id')->nullable()->constrained('taxes'); // Taxas
             $table->foreignId('brand_id')->nullable()->constrained('brands'); // Marcas
 
-            $table->string('name');
             $table->string('item_code')->unique()->nullable(); // Código único do item (exemplo: SKU, código de barras)
+            $table->string('name');
             $table->string('sku')->nullable(); // Código de rastreamento interno
             $table->boolean('is_service')->default(0); // Define se é um serviço ou um produto
             $table->text('description')->nullable(); // Descrição detalhada do item
