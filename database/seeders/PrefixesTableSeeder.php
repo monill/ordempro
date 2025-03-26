@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -13,6 +14,7 @@ class PrefixesTableSeeder extends Seeder
      */
     public function run(): void
     {
+        $now = Carbon::now();
         DB::table('prefixes')->insert([
             [
                 'company_id' => 1,
@@ -30,6 +32,8 @@ class PrefixesTableSeeder extends Seeder
                 'sale_return' => 'SR-',
                 'stock_transfer' => 'STK-',
                 'quotation' => 'QT-',
+                'created_at' => $now,
+                'updated_at' => $now,
             ]
         ]);
     }
