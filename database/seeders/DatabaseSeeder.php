@@ -15,17 +15,22 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             AddressTypesTableSeeder::class,
+            CompaniesTableSeeder::class,
             CountriesTableSeeder::class,
             CurrenciesTableSeeder::class,
             ExpenseCategoriesTableSeeder::class,
             GendersTableSeeder::class,
+            ItemCategoriesTableSeeder::class,
             LanguagesTableSeeder::class,
             PaymentTypesTableSeeder::class,
             PhoneTypesTableSeeder::class,
             PrefixesTableSeeder::class,
+            SettingsTableSeeder::class,
             TaxesTableSeeder::class,
             TimezonesTableSeeder::class,
             UnitsTableSeeder::class,
+            UsersTableSeeder::class,
+            WarehousesTableSeeder::class,
         ]);
     }
 }
