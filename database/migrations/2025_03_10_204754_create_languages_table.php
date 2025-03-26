@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('languages', function (Blueprint $table) {
             $table->id();
-            $table->string('code')->unique();
-            $table->string('name');
+            $table->string('code', 10)->unique();
+            $table->string('name', 50);
             $table->enum('direction', ['ltr', 'rtl'])->default('ltr');
-            $table->string('icon')->nullable();
+            $table->string('icon', 20)->nullable();
             $table->boolean('is_enabled')->default(true);
             $table->softDeletes();
             $table->timestamps();
