@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('phones', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('partner_id')->constrained('partners');
             $table->foreignId('phone_type_id')->constrained('phone_types');
+            $table->foreignId('partner_id')->constrained('partners');
 
             $table->string('number'); // Número do telefone
-            $table->boolean('is_whatsapp')->default(false); // Indica se o número é do WhatsApp
+            $table->boolean('is_whatsapp')->default(false); // Indica se o número é WhatsApp
 
             $table->softDeletes();
             $table->timestamps();
