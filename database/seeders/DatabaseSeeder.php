@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,23 +14,24 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            AddressTypesTableSeeder::class,
-            CompaniesTableSeeder::class,
             CountriesTableSeeder::class,
-            CurrenciesTableSeeder::class,
-            ExpenseCategoriesTableSeeder::class,
-            GendersTableSeeder::class,
-            ItemCategoriesTableSeeder::class,
-            LanguagesTableSeeder::class,
-            PaymentTypesTableSeeder::class,
-            PhoneTypesTableSeeder::class,
-            PrefixesTableSeeder::class,
-            SettingsTableSeeder::class,
-            TaxesTableSeeder::class,
+            StatesTableSeeder::class,
+            CitiesTableSeeder::class,
             TimezonesTableSeeder::class,
-            UnitsTableSeeder::class,
-            UsersTableSeeder::class,
+            SettingsTableSeeder::class,
+            LanguagesTableSeeder::class,
+            TypeAddressesTableSeeder::class,
+            TypePaymentsTableSeeder::class,
+            TypePhonesTableSeeder::class,
+            GendersTableSeeder::class,
+            CompaniesTableSeeder::class,
+            TaxesTableSeeder::class,
             WarehousesTableSeeder::class,
+            PrefixesTableSeeder::class,
+            UnitsTableSeeder::class,
+            ItemCategoriesTableSeeder::class,
+            ExpenseCategoriesTableSeeder::class,
+            UsersTableSeeder::class,
         ]);
     }
 }

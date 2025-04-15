@@ -2,10 +2,8 @@
 
 namespace Database\Seeders;
 
-use Carbon\Carbon;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\ItemCategory;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class ItemCategoriesTableSeeder extends Seeder
 {
@@ -14,9 +12,12 @@ class ItemCategoriesTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $now = Carbon::now();
-        DB::table('item_categories')->insert([
-            'name' => 'Geral', 'created_at' => $now, 'updated_at' => $now
-        ]);
+        $categories = [
+            ['name' => 'Geral']
+        ];
+
+        foreach ($categories as $category) {
+            ItemCategory::create($category);
+        }
     }
 }

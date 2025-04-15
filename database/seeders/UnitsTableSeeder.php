@@ -2,10 +2,8 @@
 
 namespace Database\Seeders;
 
-use Carbon\Carbon;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Unit;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class UnitsTableSeeder extends Seeder
 {
@@ -14,23 +12,26 @@ class UnitsTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $now = Carbon::now();
-        DB::table('units')->insert([
-            ['name' => 'None', 'short_code' => 'None', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Box', 'short_code' => 'Box', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Pieces', 'short_code' => 'Pcs', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Bag', 'short_code' => 'Bag', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Bottle', 'short_code' => 'Btl', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Kilogram', 'short_code' => 'Kg', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Gram', 'short_code' => 'g', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Liter', 'short_code' => 'L', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Meter', 'short_code' => 'm', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Centimeter', 'short_code' => 'cm', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Millimeter', 'short_code' => 'mm', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Pack', 'short_code' => 'Pk', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Dozen', 'short_code' => 'Dz', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Ton', 'short_code' => 'T', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Pair', 'short_code' => 'Pr', 'created_at' => $now, 'updated_at' => $now]
-        ]);
+        $units = [
+            ['company_id' => 1, 'name' => 'None', 'short_code' => 'None'],
+            ['company_id' => 1, 'name' => 'Box', 'short_code' => 'Box'],
+            ['company_id' => 1, 'name' => 'Pieces', 'short_code' => 'Pcs'],
+            ['company_id' => 1, 'name' => 'Bag', 'short_code' => 'Bag'],
+            ['company_id' => 1, 'name' => 'Bottle', 'short_code' => 'Btl'],
+            ['company_id' => 1, 'name' => 'Kilogram', 'short_code' => 'Kg'],
+            ['company_id' => 1, 'name' => 'Gram', 'short_code' => 'g'],
+            ['company_id' => 1, 'name' => 'Liter', 'short_code' => 'L'],
+            ['company_id' => 1, 'name' => 'Meter', 'short_code' => 'm'],
+            ['company_id' => 1, 'name' => 'Centimeter', 'short_code' => 'cm'],
+            ['company_id' => 1, 'name' => 'Millimeter', 'short_code' => 'mm'],
+            ['company_id' => 1, 'name' => 'Pack', 'short_code' => 'Pk'],
+            ['company_id' => 1, 'name' => 'Dozen', 'short_code' => 'Dz'],
+            ['company_id' => 1, 'name' => 'Ton', 'short_code' => 'T'],
+            ['company_id' => 1, 'name' => 'Pair', 'short_code' => 'Pr']
+        ];
+
+        foreach ($units as $unit) {
+            Unit::create($unit);
+        }
     }
 }

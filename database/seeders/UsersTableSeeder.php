@@ -2,10 +2,8 @@
 
 namespace Database\Seeders;
 
-use Carbon\Carbon;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UsersTableSeeder extends Seeder
@@ -15,17 +13,20 @@ class UsersTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $now = Carbon::now();
-        DB::table('users')->insert([
-            'username' => 'admin',
-            'first_name' => 'Admin',
-            'email' => 'admin@example.com',
-            'email_verified_at' => $now,
-            'password' => Hash::make('123123'),
-            'access_all_warehouses' => true,
-            'is_enabled' => true,
-            'created_at' => $now,
-            'updated_at' => $now,
-        ]);
+        $users = [
+            [
+                'username' => 'admin',
+                'first_name' => 'Admin',
+                'email' => 'admin@example.com',
+                'email_verified_at' => now(),
+                'password' => Hash::make('123123'),
+                'access_all_warehouses' => true,
+                'is_enabled' => true
+            ]
+        ];
+
+        foreach ($users as $user) {
+            User::create($user);
+        }
     }
 }

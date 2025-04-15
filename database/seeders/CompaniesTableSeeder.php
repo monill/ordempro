@@ -2,10 +2,8 @@
 
 namespace Database\Seeders;
 
-use Carbon\Carbon;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Company;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class CompaniesTableSeeder extends Seeder
 {
@@ -14,14 +12,16 @@ class CompaniesTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $now = Carbon::now();
-        DB::table('companies')->insert([
-            'name' => 'Joao App',
-            'date_format' => 'd-m-Y',
-            'time_format' => '24',
-            'timezone' => 'America/Sao_Paulo',
-            'created_at' => $now,
-            'updated_at' => $now
-        ]);
+        $companies = [
+            [
+                'name' => 'Joao App',
+                'date_format' => 'd/m/Y',
+                'time_format' => '24'
+            ]
+        ];
+
+        foreach ($companies as $company) {
+            Company::create($company);
+        }
     }
 }
